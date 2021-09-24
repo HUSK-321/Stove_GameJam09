@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4903850797165214842}
   - component: {fileID: 4903850797165214837}
   - component: {fileID: 4903850797165214836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jump_Block
   m_TagString: Block
   m_Icon: {fileID: 0}

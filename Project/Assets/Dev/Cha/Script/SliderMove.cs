@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class SliderMove : MonoBehaviour
 {
-    public Vector2 startPos;
-    public Vector2 endPos;
+    // -6.5 -14.55
+    // 8
     SpriteRenderer SpriteRenderer;
     Rigidbody2D rigid;
-    public Transform Target;
-    public float Speed = 1f;
-    // Start is called before the first frame update
+
     void Awake()
     {
-        startPos = new Vector2(-6.5f, -14.55f);
-        endPos = new Vector2(8f, -14.55f);
         rigid = GetComponent<Rigidbody2D>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -45,36 +41,25 @@ public class SliderMove : MonoBehaviour
     }
     void Start()
     {
-        
+        rigid.velocity = new Vector3(1.45f, 0f, 0f);
+        print(transform.position);
     }
+    float currentTime = 0f;
+    int count = 0;
 
-    // Update is called once per frame
     void Update()
     {
-        UpdateMove(startPos, endPos, 10f);
-    }
+        currentTime += Time.deltaTime;
 
-    void UpdateMove(Vector2 startPos, Vector2 targetPos, float duration)
-    {
-        float timer = 0f;
-
-        // 이동 시작 위치 설정
-        Vector2 position = startPos;
-        rectTransform.anchoredPosition = position;
-
-        // 시간에 따른 위치 설정
-        while (timer < duration)
+        if(currentTime > 1)
         {
-            timer += Time.deltaTime;
-
-            position.x = Mathf.Lerp(startPos.x, targetPos.x, timer / duration);
-            position.y = Mathf.Lerp(startPos.y, targetPos.y, timer / duration);
-
-            rectTransform.anchoredPosition = position;
+            print(transform.position);
+            count++;
+            if(count == 10)
+                rigid.velocity = new Vector3(0, 0, 0);
+            currentTime = 0f;
         }
-
-        // 이동 종료 위치 설정
-        position = targetPos;
-        rectTransform.anchoredPosition = position;
     }
+
+
 }
