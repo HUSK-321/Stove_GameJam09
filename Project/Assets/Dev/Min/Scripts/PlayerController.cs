@@ -28,6 +28,7 @@ namespace Martin
 
         Animator anim;
         Rigidbody2D RB;
+        CameraManager CM;
 
         enum AnimationType
         {
@@ -45,6 +46,7 @@ namespace Martin
             anim = GetComponent<Animator>();
             RB = GetComponent<Rigidbody2D>();
             animType = AnimationType.IsGround;
+            CM = FindObjectOfType(typeof(CameraManager)) as CameraManager;
             PlayerAnimSet = new bool[3];
         }
 
@@ -66,6 +68,16 @@ namespace Martin
             {
                 Jump();
             }
+
+            // only activate in ingame scene
+            /*if (CM != null && CM.isInGame)
+            {
+                anim.speed = 1;
+            }
+            else
+            {
+                anim.speed = 0;
+            }*/
 
             AnimationSetting();
         }
