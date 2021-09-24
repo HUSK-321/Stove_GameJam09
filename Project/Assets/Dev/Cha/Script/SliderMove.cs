@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SliderMove : MonoBehaviour
 {
+    // -6.5 -14.55
+    // 8
     SpriteRenderer SpriteRenderer;
     Rigidbody2D rigid;
-    // Start is called before the first frame update
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -39,11 +41,24 @@ public class SliderMove : MonoBehaviour
     }
     void Start()
     {
+        rigid.velocity = new Vector3(1.45f, 0f, 0f);
+        print(transform.position);
     }
+    float currentTime = 0f;
+    int count = 0;
 
-    // Update is called once per frame
     void Update()
     {
+        currentTime += Time.deltaTime;
+
+        if(currentTime > 1)
+        {
+            print(transform.position);
+            count++;
+            if(count == 10)
+                rigid.velocity = new Vector3(0, 0, 0);
+            currentTime = 0f;
+        }
     }
 
 

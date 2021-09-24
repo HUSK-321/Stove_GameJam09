@@ -6,6 +6,10 @@ using TMPro;
 
 public class CameraManager : MonoBehaviour
 {
+    // -6.5 -14.55
+    // 8
+    // 14.5
+
     public bool isInGame;
     float shakeTimer;
     float totalShakeTimer;

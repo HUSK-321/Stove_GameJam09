@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2385682815933247382}
   - component: {fileID: 2385682815933247381}
   - component: {fileID: 2385682815933247380}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Invincible_Block
   m_TagString: Block
   m_Icon: {fileID: 0}
