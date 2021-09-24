@@ -15,11 +15,11 @@ public class SwitchCamera : MonoBehaviour
         {
             if(cameraManager.isInGame && !cameraManager.tabbed)
             {
-                cameraManager.ChangeCam(TimelineConfiner);
+                cameraManager.ChangeCam();
             }
             else
             {
-                cameraManager.ChangeCam(IngameConfiner);
+                cameraManager.ChangeCam();
             } 
         }
     }

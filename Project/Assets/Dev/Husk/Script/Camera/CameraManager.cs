@@ -12,8 +12,6 @@ public class CameraManager : MonoBehaviour
     float startingIntensity;
     [SerializeField] CinemachineVirtualCamera InGameCam;
     [SerializeField] CinemachineVirtualCamera TimelineCam;
-    public CinemachineConfiner InGameConfiner;
-    public CinemachineConfiner TimeLineConfiner;
 
     [Header("UI 관련")]
     public bool tabbed;
@@ -25,11 +23,10 @@ public class CameraManager : MonoBehaviour
         tabbed = false;
     }
 
-    public void ChangeCam(Collider2D border)
+    public void ChangeCam()
     {
         if(isInGame && !tabbed)
         {
-            TimeLineConfiner.m_BoundingShape2D = border;
             isInGame = false;
             UI.SetActive(false);
             tabbed = true;
@@ -38,18 +35,17 @@ public class CameraManager : MonoBehaviour
             InGameCam.gameObject.SetActive(false);
 
 
-            //instance.ShakeCamera(0f, 0f);
+            //ShakeCamera(0f, 0f);
         }
         else
         {
-            InGameConfiner.m_BoundingShape2D = border;
             isInGame = true;
             UI.SetActive(true);
             InGameCam.gameObject.SetActive(true);
             TimelineCam.gameObject.SetActive(false);
 
 
-            //instance.ShakeCamera(0f, 0f);
+            //ShakeCamera(0f, 0f);
         }
     }
 
