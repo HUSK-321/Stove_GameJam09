@@ -1683,6 +1683,8 @@ GameObject:
   m_Component:
   - component: {fileID: 857407599}
   - component: {fileID: 857407598}
+  - component: {fileID: 857407600}
+  - component: {fileID: 857407601}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -1754,6 +1756,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &857407600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857407597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c191c8e409ada45a120abf476a0d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &857407601
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857407597}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &880756642
 GameObject:
   m_ObjectHideFlags: 3
@@ -3775,12 +3810,12 @@ PrefabInstance:
     - target: {fileID: 4903850797165214840, guid: bad9be9939ae8d146a85884dce18cf63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.35
+      value: -6.53
       objectReference: {fileID: 0}
     - target: {fileID: 4903850797165214840, guid: bad9be9939ae8d146a85884dce18cf63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.788565
+      value: -15.44
       objectReference: {fileID: 0}
     - target: {fileID: 4903850797165214840, guid: bad9be9939ae8d146a85884dce18cf63,
         type: 3}
@@ -3913,12 +3948,12 @@ PrefabInstance:
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2045947
+      value: -6.54
       objectReference: {fileID: 0}
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.864916
+      value: -16.34
       objectReference: {fileID: 0}
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
