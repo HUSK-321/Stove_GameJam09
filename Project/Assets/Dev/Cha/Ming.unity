@@ -3788,6 +3788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invincible_Block
       objectReference: {fileID: 0}
+    - target: {fileID: 2385682815933247403, guid: 42dd71d712966bf4285ee4f58d6870a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42dd71d712966bf4285ee4f58d6870a3, type: 3}
 --- !u!1001 &4903850796272717474
@@ -3801,6 +3806,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jump_Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903850797165214839, guid: bad9be9939ae8d146a85884dce18cf63,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4903850797165214840, guid: bad9be9939ae8d146a85884dce18cf63,
         type: 3}
@@ -3871,6 +3881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right_Block
       objectReference: {fileID: 0}
+    - target: {fileID: 5537240102278219618, guid: b3f8711c3ee17334cb66a4315ce1cd1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5537240102278219623, guid: b3f8711c3ee17334cb66a4315ce1cd1b,
         type: 3}
       propertyPath: m_RootOrder
@@ -3940,6 +3955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left_Block
       objectReference: {fileID: 0}
+    - target: {fileID: 6638648929968514881, guid: cf09af57bafb85f49beaf200d4e76dce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
       propertyPath: m_RootOrder
@@ -3948,12 +3968,12 @@ PrefabInstance:
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.54
+      value: -1.2045947
       objectReference: {fileID: 0}
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.34
+      value: -11.864916
       objectReference: {fileID: 0}
     - target: {fileID: 6638648929968514938, guid: cf09af57bafb85f49beaf200d4e76dce,
         type: 3}
