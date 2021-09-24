@@ -70,16 +70,14 @@ namespace Martin
             }
 
             // only activate in ingame scene
-            /*if (CM != null && CM.isInGame)
+            if (CM != null && CM.isInGame)
             {
-                RB.gravityScale = 1;
-                anim.speed = 1;
+                Time.timeScale = 1;
             }
             else
             {
-                RB.gravityScale = 0;
-                anim.speed = 0;
-            }*/
+                Time.timeScale = 0;
+            }
 
             AnimationSetting();
         }
