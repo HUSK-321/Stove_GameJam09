@@ -64,7 +64,7 @@ namespace Martin
                     break;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space)/* && CM != null && CM.isInGame*/)
             {
                 Jump();
             }
@@ -72,10 +72,12 @@ namespace Martin
             // only activate in ingame scene
             /*if (CM != null && CM.isInGame)
             {
+                RB.gravityScale = 1;
                 anim.speed = 1;
             }
             else
             {
+                RB.gravityScale = 0;
                 anim.speed = 0;
             }*/
 
