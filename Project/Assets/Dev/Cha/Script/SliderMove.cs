@@ -41,7 +41,7 @@ public class SliderMove : MonoBehaviour
     }
     void Start()
     {
-        rigid.velocity = new Vector3(1.45f, 0f, 0f);
+        rigid.velocity = new Vector3(1.445f, 0f, 0f);
         print(transform.position);
     }
     float currentTime = 0f;
