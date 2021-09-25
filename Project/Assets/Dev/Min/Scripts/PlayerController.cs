@@ -161,6 +161,11 @@ namespace Martin
 
         }
 
+        public void MoveHorizontal(int dir/*-1 = left, 1 = right*/)
+        {
+            transform.Translate(Vector3.right * dir * Time.deltaTime);
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Ground") && !PlayerAnimSet[3] && !PlayerAnimSet[4])
