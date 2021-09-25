@@ -22,6 +22,7 @@ public class SliderMove : MonoBehaviour
         if(rayHitR.collider != null)
         {
             Debug.Log("R");
+            // Martin.PlayerController.Instance
         }
 
         RaycastHit2D rayHitL = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("L"));
@@ -29,13 +30,15 @@ public class SliderMove : MonoBehaviour
         {
             Debug.Log("L");
         }
+
         RaycastHit2D rayHitJ = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("J"));
         if(rayHitJ.collider != null)
         {
             Debug.Log("J");
         }
+
         RaycastHit2D rayHitI = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("I"));
-            if(rayHitI.collider != null)
+        if(rayHitI.collider != null)
         {
             Debug.Log("I");
         }

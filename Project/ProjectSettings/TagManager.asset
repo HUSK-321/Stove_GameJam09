@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Timeline
   - Block
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
