@@ -31,6 +31,8 @@ namespace Martin
         Rigidbody2D RB;
         CameraManager CM;
 
+        [SerializeField] ParticleSystem particle;
+
         enum AnimationType
         {
             IsGround,
@@ -56,6 +58,7 @@ namespace Martin
             animType = AnimationType.IsIdle;
             AnimationBoolSet((int)animType);
             jumpAble = true;
+            particle.Stop();
         }
 
         void Update()
@@ -164,6 +167,14 @@ namespace Martin
 
         public void GameOver()
         {
+            StartCoroutine(GameOverEffect());
+        }
+
+        IEnumerator GameOverEffect()
+        {
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            particle.Play();
+            yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
