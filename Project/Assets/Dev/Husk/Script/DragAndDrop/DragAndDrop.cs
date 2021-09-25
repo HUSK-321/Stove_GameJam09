@@ -76,8 +76,14 @@ public class DragAndDrop : MonoBehaviour
             isInLine = true;
             timelinePosY = other.transform.position.y;
         }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
         if(other.CompareTag("Block"))
         {
+            print("아이고난!");
             isInLine = false;
         }
     }
