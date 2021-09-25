@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainUI.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Dev/Husk/dev_husk.unity
-    guid: 9e1ad750f769efc4e8cc517727a11688
+    path: Assets/Scenes/Stages/Stage1.unity
+    guid: 2b93d6bd2bdd9af43b8ec0968b94570a
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage4.unity
+    guid: 072a2c9a3248ec944a5ab50d1ea762a9
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage2.unity
+    guid: f263070897eadeb47baa4678a9c79608
   m_configObjects: {}

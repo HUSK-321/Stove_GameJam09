@@ -12,6 +12,6 @@ public class InGameMenu : MonoBehaviour
 
     public void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Timer.instance.currentTime = 0;
     }
 }

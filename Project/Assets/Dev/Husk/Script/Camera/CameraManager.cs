@@ -38,7 +38,7 @@ public class CameraManager : MonoBehaviour
 
     IEnumerator StartScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         // camera move
 

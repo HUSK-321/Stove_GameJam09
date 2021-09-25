@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Timer : MonoBehaviour
     const float maxTime = 10f;
     public float currentTime = 0f;
     [SerializeField] CameraManager cameraManager;
+    public bool dead = false;
 
     // UI
     [SerializeField] TextMeshProUGUI timer;
@@ -31,7 +33,12 @@ public class Timer : MonoBehaviour
         if(currentTime <= 0)
         {
             timer.text = "0 s";
-            print("아이고난!");
+            if(!dead)
+            {
+                dead = true;
+                Martin.PlayerController.Instance.GameOver();
+            }
+                
         }
     }
 }

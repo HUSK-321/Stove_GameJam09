@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 6859554676841030789}
+  jumpForce: 6
 --- !u!58 &1616207373237256750
 CircleCollider2D:
   m_ObjectHideFlags: 0

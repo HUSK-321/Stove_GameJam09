@@ -9,9 +9,11 @@ public class SliderMove : MonoBehaviour
     SpriteRenderer SpriteRenderer;
     Rigidbody2D rigid;
     [SerializeField] CameraManager cameraManager;
+    bool jumped;
 
     void Awake()
     {
+        jumped = false;
         rigid = GetComponent<Rigidbody2D>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -35,7 +37,15 @@ public class SliderMove : MonoBehaviour
             RaycastHit2D rayHitJ = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("J"));
             if(rayHitJ.collider != null)
             {
-                Martin.PlayerController.Instance.Jump();
+                if(!jumped)
+                {
+                    jumped = true;
+                    Martin.PlayerController.Instance.Jump();
+                }
+            }
+            else 
+            {
+                jumped = false;
             }
 
             RaycastHit2D rayHitI = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("I"));

@@ -29,11 +29,11 @@ public class Spike : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
+    // public void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "Player")
+    //     {
+    //         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //     }
+    // }
 }

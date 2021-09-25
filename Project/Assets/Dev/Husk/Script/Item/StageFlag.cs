@@ -9,9 +9,13 @@ public class StageFlag : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            // TODO : 씬 빌드 인덱스++;
-            print("이걸 해냅니다");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            // 씬 빌드 인덱스++;
+            if(nextSceneIndex >= Application.levelCount)
+                SceneManager.LoadScene(0);
+            else 
+                SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }

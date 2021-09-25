@@ -49,6 +49,9 @@ namespace Martin
         bool isStop;
         Vector2 velocity;
 
+        //JumpForce
+        public float jumpForce;
+
         void Start()
         {
             CM = FindObjectOfType(typeof(CameraManager)) as CameraManager;
@@ -145,12 +148,12 @@ namespace Martin
                 jumpAble = false;
                 animType = AnimationType.IsJump;
                 AnimationBoolSet(1);
-                RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+                RB.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
             else if(PlayerAnimSet[3] && jumpAble)
             {
                 jumpAble = false;
-                RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+                RB.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
         }
 

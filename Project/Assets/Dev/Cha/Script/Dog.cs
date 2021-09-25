@@ -39,11 +39,11 @@ public class Dog : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("아얏");
-        }
-    }
+    // public void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "Player")
+    //     {
+    //         Debug.Log("아얏");
+    //     }
+    // }
 }
