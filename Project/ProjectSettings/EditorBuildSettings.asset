@@ -34,8 +34,38 @@ EditorBuildSettings:
     guid: d5cb31dee900fbf41b72b3dd26cd0e54
   - enabled: 1
     path: Assets/Scenes/Stages/Stage9.unity
-    guid: f188a3381904ab542b5a40553acc4a38
+    guid: cb45d7f7471784241870ebb4bf25cc53
   - enabled: 1
     path: Assets/Scenes/Stages/Stage10.unity
     guid: 3a3f31c6c79d9894e89788c2508c8ea8
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-1.unity
+    guid: 724065d6561fc9b46bbb6966946433fb
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-2.unity
+    guid: 5e62cffb4b7be7e4d94803509e265bc4
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-3.unity
+    guid: 3b3c52fae228c124aa0567c8be7dc599
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-4.unity
+    guid: b6752089c04a4a44184d9b3e4bec0808
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-5.unity
+    guid: a01b88bf3b2a6cf4a83e5526c2cc0701
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-6.unity
+    guid: 6e59fbd2db5b51444b60a4fa62ba9c9e
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-7.unity
+    guid: 90d9b51ad99d14346b389437a139701f
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-8.unity
+    guid: a222aa19a41f3d545ae3822d5c22ba2e
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-9.unity
+    guid: 00d9ee67baa915646b6110cc571e3dd9
+  - enabled: 1
+    path: Assets/Dev/Min/Stage Scene/Stage2-10.unity
+    guid: e9d32840317140946852c3713ec3354c
   m_configObjects: {}
