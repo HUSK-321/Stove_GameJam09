@@ -10,4 +10,9 @@ public class MainMenu : MonoBehaviour
         print("유니티에서는 종료 안된다 애송이");
         Application.Quit();
     }
+
+    public void StageStart(int index)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + index);
+    }
 }
