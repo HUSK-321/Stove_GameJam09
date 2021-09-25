@@ -163,6 +163,7 @@ namespace Martin
 
         public void MoveHorizontal(int dir/*-1 = left, 1 = right*/)
         {
+            Ground();
             transform.Translate(Vector3.right * dir * Time.deltaTime);
         }
 
