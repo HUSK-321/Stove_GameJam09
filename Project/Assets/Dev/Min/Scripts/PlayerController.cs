@@ -84,19 +84,19 @@ namespace Martin
                     break;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)/*&& CM.isInGame*/)
-            {
-                Jump();
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                isStop = !isStop;
-                RB.velocity = velocity;
-            }
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                Invincible();
-            }
+            // if (Input.GetKeyDown(KeyCode.Space)/*&& CM.isInGame*/)
+            // {
+            //     Jump();
+            // }
+            // if (Input.GetKeyDown(KeyCode.S))
+            // {
+            //     isStop = !isStop;
+            //     RB.velocity = velocity;
+            // }
+            // if (Input.GetKeyDown(KeyCode.I))
+            // {
+            //     Invincible();
+            // }
 
             // only activate in ingame scene
             if (!isStop)
