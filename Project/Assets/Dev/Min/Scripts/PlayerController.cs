@@ -84,19 +84,19 @@ namespace Martin
                     break;
             }
 
-            // if (Input.GetKeyDown(KeyCode.Space)/*&& CM.isInGame*/)
-            // {
-            //     Jump();
-            // }
-            // if (Input.GetKeyDown(KeyCode.S))
-            // {
-            //     isStop = !isStop;
-            //     RB.velocity = velocity;
-            // }
-            // if (Input.GetKeyDown(KeyCode.I))
-            // {
-            //     Invincible();
-            // }
+            if (Input.GetKeyDown(KeyCode.Space)/*&& CM.isInGame*/)
+            {
+                Jump();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                isStop = !isStop;
+                RB.velocity = velocity;
+            }
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Invincible();
+            }
 
             // only activate in ingame scene
             if (!isStop)
@@ -141,19 +141,26 @@ namespace Martin
             animType = AnimationType.IsHover;
         }
 
-        public void Jump()
+        public void Jump(float jumpforceY = 0)
         {
+            if (jumpforceY == 0) jumpforceY = jumpForce;
+
             if (PlayerAnimSet[0] || PlayerAnimSet[4] && jumpAble)
             {
                 jumpAble = false;
                 animType = AnimationType.IsJump;
                 AnimationBoolSet(1);
-                RB.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                RB.AddForce(new Vector2(0, jumpforceY), ForceMode2D.Impulse);
             }
             else if(PlayerAnimSet[3] && jumpAble)
             {
                 jumpAble = false;
-                RB.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                RB.AddForce(new Vector2(0, jumpforceY), ForceMode2D.Impulse);
+            }
+            else if(PlayerAnimSet[1] || PlayerAnimSet[2] && jumpforceY != jumpForce)
+            {
+                RB.velocity = Vector2.zero;
+                RB.AddForce(new Vector2(0, jumpforceY), ForceMode2D.Impulse);
             }
         }
 
