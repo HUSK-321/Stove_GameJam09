@@ -14,6 +14,7 @@ public class Spike : MonoBehaviour
     void Start()
     {
         nextPos = startPos.position;
+        cameraManager = FindObjectOfType(typeof(CameraManager)) as CameraManager;
     }
 
     void Update()
