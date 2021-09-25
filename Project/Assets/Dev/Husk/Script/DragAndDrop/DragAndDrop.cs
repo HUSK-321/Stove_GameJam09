@@ -83,7 +83,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if(other.CompareTag("Block"))
         {
-            print("아이고난!");
+            //print("아이고난!");
             isInLine = false;
         }
     }
