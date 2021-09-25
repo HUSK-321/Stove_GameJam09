@@ -11,29 +11,60 @@ public class CameraManager : MonoBehaviour
     // 14.5
 
     public bool isInGame;
-    float shakeTimer;
-    float totalShakeTimer;
-    float startingIntensity;
+    public bool startGame;
     [SerializeField] CinemachineVirtualCamera InGameCam;
     [SerializeField] CinemachineVirtualCamera TimelineCam;
 
     [Header("UI 관련")]
     public bool tabbed;
-    [SerializeField] GameObject UI;
+    [SerializeField] GameObject InGameUI;
+    [SerializeField] GameObject TimeLineUI;
     [SerializeField] TextMeshProUGUI tabCountUI;
     void Awake()
     {
-        isInGame = true;
+        isInGame = false;
+        startGame = false;
         tabbed = false;
     }
+
+    # region 시작시 스테이지 보고 플레이어가 타임라인 조작하게 하기
+
+
+    private void Start() 
+    {
+        StartCoroutine(StartScene());
+    }
+
+    IEnumerator StartScene()
+    {
+        yield return new WaitForSeconds(1f);
+
+        // camera move
+
+        InGameUI.SetActive(false);
+        TimelineCam.gameObject.SetActive(true);
+        InGameCam.gameObject.SetActive(false);
+
+        startGame = true;
+    }
+
+
+
+    #endregion
+
+
+
+
 
     public void ChangeCam()
     {
         if(isInGame && !tabbed)
         {
             isInGame = false;
-            UI.SetActive(false);
             tabbed = true;
+
+            InGameUI.SetActive(false);
+
             tabCountUI.text = "You Can't Tab!";
             TimelineCam.gameObject.SetActive(true);
             InGameCam.gameObject.SetActive(false);
@@ -44,7 +75,8 @@ public class CameraManager : MonoBehaviour
         else
         {
             isInGame = true;
-            UI.SetActive(true);
+
+            InGameUI.SetActive(true);
             InGameCam.gameObject.SetActive(true);
             TimelineCam.gameObject.SetActive(false);
 
@@ -53,46 +85,14 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    public void ShakeCamera(float intensity, float time)
-    {
-        CinemachineBasicMultiChannelPerlin multiChannelPerlin;
-        if(isInGame)
-        {
-            multiChannelPerlin = InGameCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        }
-        else 
-        {
-            multiChannelPerlin = TimelineCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        }
-        
-        multiChannelPerlin.m_AmplitudeGain = intensity;
-
-        startingIntensity = intensity;
-        totalShakeTimer = time;
-        shakeTimer = time;
-    }
-
     private void Update() 
     {
-        if(shakeTimer > 0)
+
+        if(Input.GetKeyDown(KeyCode.Tab) && startGame)
         {
-            shakeTimer -= Time.deltaTime;
-            if(shakeTimer <= 0f)
-            {   
-                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
-                if(isInGame)
-                {
-                    cinemachineBasicMultiChannelPerlin = InGameCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-                }
-                else
-                {
-                    cinemachineBasicMultiChannelPerlin = TimelineCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-                }
-                
-                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 
-                    Mathf.Lerp(startingIntensity, 0f, (1 - (shakeTimer / totalShakeTimer)));
-            }
+            ChangeCam();
         }
+        
     }
 }
 

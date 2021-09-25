@@ -8,6 +8,7 @@ public class SliderMove : MonoBehaviour
     // 8
     SpriteRenderer SpriteRenderer;
     Rigidbody2D rigid;
+    [SerializeField] CameraManager cameraManager;
 
     void Awake()
     {
@@ -39,27 +40,47 @@ public class SliderMove : MonoBehaviour
             Debug.Log("I");
         }
     }
-    void Start()
-    {
-        rigid.velocity = new Vector3(1.445f, 0f, 0f);
-        print(transform.position);
-    }
     float currentTime = 0f;
     int count = 0;
 
     void Update()
     {
-        currentTime += Time.deltaTime;
-
-        if(currentTime > 1)
+        if(cameraManager.isInGame)
         {
-            print(transform.position);
-            count++;
-            if(count == 10)
-                rigid.velocity = new Vector3(0, 0, 0);
-            currentTime = 0f;
+            StartMove();
+            currentTime += Time.deltaTime;
+
+            if(currentTime > 1)
+            {
+                count++;
+                if(count == 10)
+                    rigid.velocity = new Vector3(0, 0, 0);
+                currentTime = 0f;
+            }
         }
+        else 
+        {
+            StopMove();
+        }
+
     }
 
+
+    #region 이동 관련
+
+
+    void StartMove()
+    {
+        rigid.velocity = new Vector3(1.445f, 0f, 0f);
+
+    }
+
+    void StopMove()
+    {
+        rigid.velocity = new Vector3(0, 0, 0);
+    }
+
+
+    #endregion
 
 }

@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
         if(cameraManager.isInGame && currentTime > 0)
         {
             currentTime -= 1 * Time.deltaTime;
-            timer.text = currentTime.ToString() + " s";
+            timer.text = currentTime.ToString("N2") + " s";
             
         }
         //  TODO : 플레이어 사망 로직 연결
@@ -33,8 +33,5 @@ public class Timer : MonoBehaviour
             timer.text = "0 s";
             print("아이고난!");
         }
-            
-        
-        print(currentTime);
     }
 }
