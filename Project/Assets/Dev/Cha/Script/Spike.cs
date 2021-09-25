@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spike : MonoBehaviour
 {
@@ -9,13 +10,11 @@ public class Spike : MonoBehaviour
     public Transform startPos;
 
     Vector3 nextPos;
-    // Start is called before the first frame update
     void Start()
     {
         nextPos = startPos.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(transform.position == pos1.position)
@@ -34,7 +33,7 @@ public class Spike : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("아얏");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

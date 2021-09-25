@@ -1354,9 +1354,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<Special Thanks>
-
-    Doggy (by. NVPH Studio)'
+  m_text: "<Special Thanks>\nDoggy (by. NVPH Studio)\nFLASH \u2606 BEAT - Techno
+    Trap(BGM)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be8a1dee31cfec44f8e04f9ac67f0209, type: 2}
   m_sharedMaterial: {fileID: 1078128928095442945, guid: be8a1dee31cfec44f8e04f9ac67f0209,
