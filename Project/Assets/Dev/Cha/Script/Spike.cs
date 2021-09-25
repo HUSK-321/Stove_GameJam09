@@ -30,8 +30,11 @@ public class Spike : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
-    private void OnDrawGizmos()
+    public void OnCollisionEnter2D(Collision2D other)
     {
-        Gizmos.DrawLine(pos1.position, pos2.position);
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("아얏");
+        }
     }
 }
