@@ -8,11 +8,13 @@ public class Spike : MonoBehaviour
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
+    [SerializeField] CameraManager cameraManager;
 
     Vector3 nextPos;
     void Start()
     {
         nextPos = startPos.position;
+        cameraManager = FindObjectOfType(typeof(CameraManager)) as CameraManager;
     }
 
     void Update()
@@ -25,8 +27,9 @@ public class Spike : MonoBehaviour
         {
             nextPos = pos1.position;
         }
-
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+        
+        if(cameraManager.isInGame)
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
     // public void OnCollisionEnter2D(Collision2D other)
