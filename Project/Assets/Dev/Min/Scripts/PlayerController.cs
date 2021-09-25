@@ -72,11 +72,11 @@ namespace Martin
             // only activate in ingame scene
             if (CM != null && CM.isInGame)
             {
-                Time.timeScale = 1;
+                anim.speed = 1;
             }
             else
             {
-                Time.timeScale = 0;
+                anim.speed = 0;
             }
 
             AnimationSetting();
