@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dog : MonoBehaviour
-{
-    public float jumpHeight;
-    
+{   
+
     private float TimeLeft = 3.0f;
     private float JumpTime = 0.0f;
     private float nextTime = 0.0f;
     Animator anim;
     Rigidbody2D rigid;
+
+    Vector3 nextPos;
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,11 +28,14 @@ public class Dog : MonoBehaviour
     }
     void Update()
     {
+         
+
         if(Time.time > nextTime){
             nextTime = Time.time + TimeLeft;
             JumpTime = Time.time;
             anim.SetInteger("Jumping", 1);
-            rigid.AddForce(new Vector3(0, jumpHeight,0), ForceMode2D.Impulse);
+            
+           
         }
         if(Time.time - JumpTime > 1.0f)
         {
