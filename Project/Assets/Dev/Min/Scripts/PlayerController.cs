@@ -137,17 +137,17 @@ namespace Martin
 
         public void Jump()
         {
-            if ((PlayerAnimSet[0] || PlayerAnimSet[4]) && jumpAble)
+            if (PlayerAnimSet[0] || PlayerAnimSet[4] && jumpAble)
             {
+                jumpAble = false;
                 animType = AnimationType.IsJump;
                 AnimationBoolSet(1);
                 RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
-                jumpAble = false;
             }
             else if(PlayerAnimSet[3] && jumpAble)
             {
-                RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
                 jumpAble = false;
+                RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             }
         }
 
