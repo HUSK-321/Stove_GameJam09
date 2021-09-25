@@ -40,6 +40,8 @@ namespace Martin
         AnimationType animType;
 
         bool[] PlayerAnimSet; // 0 = ground, 1 = jump, 2 = hover
+        bool isStop;
+        Vector2 velocity;
 
         void Start()
         {
@@ -68,15 +70,24 @@ namespace Martin
             {
                 Jump();
             }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                isStop = !isStop;
+                RB.velocity = velocity;
+            }
 
             // only activate in ingame scene
-            if (CM != null && CM.isInGame)
+            if (!isStop)
             {
                 anim.speed = 1;
+                RB.gravityScale = 1;
+                velocity = RB.velocity;
             }
             else
             {
                 anim.speed = 0;
+                RB.velocity = Vector2.zero;
+                RB.gravityScale = 0;
             }
 
             AnimationSetting();
