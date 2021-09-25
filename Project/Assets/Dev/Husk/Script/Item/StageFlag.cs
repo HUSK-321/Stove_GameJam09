@@ -11,7 +11,7 @@ public class StageFlag : MonoBehaviour
         {
             // TODO : 씬 빌드 인덱스++;
             print("이걸 해냅니다");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
