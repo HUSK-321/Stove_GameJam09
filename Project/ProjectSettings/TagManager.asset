@@ -8,6 +8,8 @@ TagManager:
   - Block
   - Ground
   - Enemy
+  - PlayerHead
+  - Scaffolding
   layers:
   - Default
   - TransparentFX
