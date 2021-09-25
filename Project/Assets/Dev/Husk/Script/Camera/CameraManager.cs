@@ -25,6 +25,7 @@ public class CameraManager : MonoBehaviour
         isInGame = false;
         startGame = false;
         tabbed = false;
+        TimeLineUI.SetActive(false);
     }
 
     # region 시작시 스테이지 보고 플레이어가 타임라인 조작하게 하기
@@ -46,6 +47,8 @@ public class CameraManager : MonoBehaviour
         InGameCam.gameObject.SetActive(false);
 
         startGame = true;
+        yield return new WaitForSeconds(0.25f);
+        TimeLineUI.SetActive(true);
     }
 
 
@@ -66,6 +69,7 @@ public class CameraManager : MonoBehaviour
             InGameUI.SetActive(false);
 
             tabCountUI.text = "You Can't Tab!";
+            TimeLineUI.SetActive(true);
             TimelineCam.gameObject.SetActive(true);
             InGameCam.gameObject.SetActive(false);
 
@@ -77,6 +81,7 @@ public class CameraManager : MonoBehaviour
             isInGame = true;
 
             InGameUI.SetActive(true);
+            TimeLineUI.SetActive(false);
             InGameCam.gameObject.SetActive(true);
             TimelineCam.gameObject.SetActive(false);
 

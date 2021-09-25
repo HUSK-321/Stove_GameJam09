@@ -18,29 +18,35 @@ public class SliderMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        RaycastHit2D rayHitR = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("R"));
-        if(rayHitR.collider != null)
+        if(cameraManager.isInGame)
         {
-            Debug.Log("R");
-            // Martin.PlayerController.Instance
-        }
+            RaycastHit2D rayHitR = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("R"));
+            if(rayHitR.collider != null)
+            {
+                Martin.PlayerController.Instance.MoveHorizontal(1);
+            }
 
-        RaycastHit2D rayHitL = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("L"));
-        if(rayHitL.collider != null)
-        {
-            Debug.Log("L");
-        }
+            RaycastHit2D rayHitL = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("L"));
+            if(rayHitL.collider != null)
+            {
+                Martin.PlayerController.Instance.MoveHorizontal(-1);
+            }
 
-        RaycastHit2D rayHitJ = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("J"));
-        if(rayHitJ.collider != null)
-        {
-            Debug.Log("J");
-        }
+            RaycastHit2D rayHitJ = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("J"));
+            if(rayHitJ.collider != null)
+            {
+                Martin.PlayerController.Instance.Jump();
+            }
 
-        RaycastHit2D rayHitI = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("I"));
-        if(rayHitI.collider != null)
-        {
-            Debug.Log("I");
+            RaycastHit2D rayHitI = Physics2D.Raycast(rigid.position, Vector3.down, 5, LayerMask.GetMask("I"));
+            if(rayHitI.collider != null)
+            {
+                Martin.PlayerController.Instance.Invincible();
+            }
+            else 
+            {
+                Martin.PlayerController.Instance.Ground();
+            }
         }
     }
     float currentTime = 0f;
