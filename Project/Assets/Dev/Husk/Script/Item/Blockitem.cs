@@ -9,7 +9,7 @@ public class Blockitem : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            print("아이고난1");
+            // print("아이고난1");
             TimelineBlock.SetActive(true);
             this.gameObject.SetActive(false);
         }
