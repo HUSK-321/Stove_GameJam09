@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Martin
 {
@@ -42,6 +43,7 @@ namespace Martin
         AnimationType animType;
 
         bool[] PlayerAnimSet; // 0 = ground, 1 = jump, 2 = hover, 3 = invincible, 4 = idle
+        bool jumpAble;
         bool isStop;
         Vector2 velocity;
 
@@ -53,6 +55,7 @@ namespace Martin
             PlayerAnimSet = new bool[5];
             animType = AnimationType.IsIdle;
             AnimationBoolSet((int)animType);
+            jumpAble = true;
         }
 
         void Update()
@@ -134,21 +137,24 @@ namespace Martin
 
         public void Jump()
         {
-            if (PlayerAnimSet[0] || PlayerAnimSet[4])
+            if ((PlayerAnimSet[0] || PlayerAnimSet[4]) && jumpAble)
             {
                 animType = AnimationType.IsJump;
                 AnimationBoolSet(1);
                 RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+                jumpAble = false;
             }
-            else if(PlayerAnimSet[3])
+            else if(PlayerAnimSet[3] && jumpAble)
             {
                 RB.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+                jumpAble = false;
             }
         }
 
         public void Ground()
         {
             animType = AnimationType.IsGround;
+            jumpAble = true;
         }
 
         public void Invincible()
@@ -158,7 +164,7 @@ namespace Martin
 
         public void GameOver()
         {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void MoveHorizontal(int dir/*-1 = left, 1 = right*/)
@@ -177,7 +183,7 @@ namespace Martin
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.CompareTag("Enemy"))
+            if(other.CompareTag("Enemy") && !PlayerAnimSet[3])
             {
                 GameOver();
             }
