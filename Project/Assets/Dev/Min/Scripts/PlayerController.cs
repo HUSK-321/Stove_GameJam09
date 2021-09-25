@@ -156,11 +156,24 @@ namespace Martin
             animType = AnimationType.IsInvincible;
         }
 
+        public void GameOver()
+        {
+
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Ground") && !PlayerAnimSet[3] && !PlayerAnimSet[4])
             {
                 Ground();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if(other.CompareTag("Enemy"))
+            {
+                GameOver();
             }
         }
     }
