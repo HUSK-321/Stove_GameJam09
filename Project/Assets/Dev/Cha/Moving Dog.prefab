@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2416454749166347234}
   m_Layer: 0
-  m_Name: Dog 1
+  m_Name: Moving Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,36 +38,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2416454749166347234}
     m_Modifications:
-    - target: {fileID: 4741246164029924700, guid: ca2dfb40137472d4fa5814b1260df668,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741246164029924701, guid: ca2dfb40137472d4fa5814b1260df668,
-        type: 3}
-      propertyPath: pos1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741246164029924701, guid: ca2dfb40137472d4fa5814b1260df668,
-        type: 3}
-      propertyPath: pos2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741246164029924701, guid: ca2dfb40137472d4fa5814b1260df668,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741246164029924701, guid: ca2dfb40137472d4fa5814b1260df668,
-        type: 3}
-      propertyPath: startPos
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741246164029924703, guid: ca2dfb40137472d4fa5814b1260df668,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4741246164029924705, guid: ca2dfb40137472d4fa5814b1260df668,
         type: 3}
       propertyPath: m_Name
