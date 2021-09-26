@@ -68,4 +68,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Dev/Min/Stage Scene/Stage2-10.unity
     guid: e9d32840317140946852c3713ec3354c
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-1.unity
+    guid: 19b4875f8644ddf43ac677661a5d7231
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-2.unity
+    guid: d811127d1b0081e4ba653817b30dec42
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-3.unity
+    guid: faa2c6d2d2260804fb2129d007b3a750
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-4.unity
+    guid: 68d0c7d2ec6bacc4d9f0811181b63a00
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-5.unity
+    guid: 3a19320bc1f0c814eb17eacb691b8f01
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-6.unity
+    guid: 4bceb29211208064f82d3d0b8e6b04a9
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-7.unity
+    guid: e9c462c43c134e747b036233e0f0853e
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-8.unity
+    guid: 5f6596cd7b92c214e91b4a0eb763fca7
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-9.unity
+    guid: 66a2c5611ad062a479173e5dd1133076
+  - enabled: 1
+    path: Assets/Dev/Cha/Test Stage/Stage3-10.unity
+    guid: fd6f02a5d10383142aa2a5928afa474d
   m_configObjects: {}

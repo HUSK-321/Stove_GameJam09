@@ -560,6 +560,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invincible_Block
       objectReference: {fileID: 0}
+    - target: {fileID: 2385682815933247403, guid: 42dd71d712966bf4285ee4f58d6870a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42dd71d712966bf4285ee4f58d6870a3, type: 3}
 --- !u!1 &286038025
