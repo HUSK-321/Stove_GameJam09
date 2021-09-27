@@ -6,5 +6,7 @@
 아트 : 양숙진
 
 [Stove 다운로드 링크](https://indie.onstove.com/ko/games/608/)
+
 [Stove 후기 링크](https://page.onstove.com/indie/global/view/7791668)
+
 [개인 블로그 후기](https://husk321.tistory.com/224)
